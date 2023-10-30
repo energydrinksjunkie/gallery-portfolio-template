@@ -1,0 +1,72 @@
+:root {
+    font-size: 16;
+    --text-light: black;
+    --text-dark: white;
+    --light-primary: #1C7C54;
+    --light-secondary: #ABFAA9;
+    --bg-light: #BBDB9B;
+    --dark-primary: #69140E;
+    --dark-secondary: #FF312E;
+    --bg-dark: #0D0221;
+}
+
+.light {
+    --bg: var(--bg-light);
+    --bg-nav: linear-gradient(to right, var(--light-primary),var(--light-secondary));
+    --text: var(--text-light);
+    --invert: 0;
+}
+
+.dark {
+    --bg: var(--bg-dark);
+    --bg-nav: linear-gradient(to right, var(--dark-primary), var(--dark-secondary));
+    --text: var(--text-dark);
+    --invert:100%
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-nav);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+header {
+    padding: 1em;
+    background: var(--bg-nav);
+    margin-bottom: 1em;
+    padding-bottom: 3.5em;
+    text-align: center;
+    clip-path: polygon(50% 0, 100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
+}
+
+.logo {
+    width: 300px;
+    filter: invert(var(--invert));
+    transition: filter 1000ms;
+}
